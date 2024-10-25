@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/Block.tscn" id="2_n5vst"]
 
 [node name="SpawnPosition" type="Marker2D"]
-
-[node name="PropSpawner" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
 script = ExtResource("1_dl1wr")
 propCollection = [ExtResource("2_n5vst")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
