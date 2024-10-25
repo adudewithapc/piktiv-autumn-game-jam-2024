@@ -8,7 +8,11 @@ size = Vector2(1088, 64)
 
 [node name="Level" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
 [node name="Stage" type="StaticBody2D" parent="."]
+disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage"]
 position = Vector2(448, 540)
