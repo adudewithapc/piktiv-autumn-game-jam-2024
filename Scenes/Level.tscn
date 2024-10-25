@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://dp6sto1pf3744"]
+[gd_scene load_steps=3 format=3 uid="uid://dp6sto1pf3744"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
+size = Vector2(64, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byneu"]
+size = Vector2(1088, 64)
 
 [node name="Level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Stage" type="StaticBody2D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage"]
+position = Vector2(448, 540)
+shape = SubResource("RectangleShape2D_0tx28")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Stage"]
+position = Vector2(1472, 540)
+shape = SubResource("RectangleShape2D_0tx28")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Stage"]
+position = Vector2(960, 1048)
+shape = SubResource("RectangleShape2D_byneu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Stage"]
+position = Vector2(959, 32)
+shape = SubResource("RectangleShape2D_byneu")
