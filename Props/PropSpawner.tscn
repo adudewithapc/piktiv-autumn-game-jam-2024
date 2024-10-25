@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://daoa5ikxr5k8b"]
+
+[ext_resource type="Script" path="res://Props/PropSpawner.gd" id="1_dl1wr"]
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/Block.tscn" id="2_n5vst"]
+
+[node name="SpawnPosition" type="Marker2D"]
+
+[node name="PropSpawner" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+script = ExtResource("1_dl1wr")
+propCollection = [ExtResource("2_n5vst")]
