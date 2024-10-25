@@ -20,3 +20,6 @@ shape = SubResource("RectangleShape2D_sohp8")
 texture = ExtResource("1_5nmld")
 script = ExtResource("1_17dx8")
 speed = 100.0
+
+[node name="GroundRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 65)
