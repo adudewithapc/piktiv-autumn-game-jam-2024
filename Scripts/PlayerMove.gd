@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Sprite2D
 
-@export var speed : float
+@export var speed : float = 1
 
 func _process(delta: float) -> void:
 	update_velocity(delta)
