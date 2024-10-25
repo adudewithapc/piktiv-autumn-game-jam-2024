@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://maxy7veb1cqc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdv4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnmb7"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_xyigk"]
+offsets = PackedFloat32Array(0.967532, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m3gkm"]
+gradient = SubResource("Gradient_xyigk")
+fill_from = Vector2(0, 1)
+
+[node name="Block" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vdv4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(664, 360)
+shape = SubResource("RectangleShape2D_mnmb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = SubResource("GradientTexture2D_m3gkm")
