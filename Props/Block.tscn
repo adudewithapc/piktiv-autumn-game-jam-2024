@@ -17,7 +17,6 @@ fill_from = Vector2(0, 1)
 physics_material_override = SubResource("PhysicsMaterial_vdv4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(664, 360)
 shape = SubResource("RectangleShape2D_mnmb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
