@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp6sto1pf3744"]
+[gd_scene load_steps=4 format=3 uid="uid://dp6sto1pf3744"]
+
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/Block.tscn" id="1_y7r7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -29,3 +31,6 @@ shape = SubResource("RectangleShape2D_byneu")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Stage"]
 position = Vector2(959, 32)
 shape = SubResource("RectangleShape2D_byneu")
+
+[node name="Block" parent="." instance=ExtResource("1_y7r7t")]
+position = Vector2(936, 256)
