@@ -26,7 +26,8 @@ func jump():
 
 func spawn_item():
 	var new_item := item.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-	new_item.global_position = global_position + Vector2.DOWN * down_spawn_offset
+	new_item.global_position = global_position + transform.y * down_spawn_offset
+	new_item.rotation = rotation
 	get_tree().root.add_child(new_item)
 
 func is_on_ground() -> bool:
