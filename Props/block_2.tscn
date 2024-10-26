@@ -8,6 +8,7 @@ size = Vector2(32, 32)
 [node name="Block2" instance=ExtResource("1_co2yr")]
 
 [node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_cp0v2")
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]

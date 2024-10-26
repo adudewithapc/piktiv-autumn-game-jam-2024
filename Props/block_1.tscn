@@ -13,6 +13,7 @@ size = Vector2(42, 42)
 physics_material_override = SubResource("PhysicsMaterial_vdv4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_mnmb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
@@ -22,5 +23,6 @@ region_enabled = true
 region_rect = Rect2(42, 19, 45, 45)
 
 [node name="PlayRNDSound" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
 script = ExtResource("2_40u0u")
 global_lib = ExtResource("3_nkj5s")

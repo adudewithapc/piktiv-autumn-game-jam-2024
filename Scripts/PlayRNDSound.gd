@@ -11,7 +11,8 @@ var collection = []
 
 func _ready():
 	collection.append_array(local_lib)
-	collection.append_array(global_lib.get_sounds())
+	if global_lib:
+		collection.append_array(global_lib.get_sounds())
 	if autoplay:
 		play_rnd()
 
