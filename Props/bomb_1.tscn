@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0pf180e6dqjj"]
+
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_bg4ke"]
+[ext_resource type="Script" path="res://Props/Bomb.gd" id="2_g76vh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d63f7"]
+size = Vector2(28, 35)
+
+[node name="Barrel1" instance=ExtResource("1_bg4ke")]
+script = ExtResource("2_g76vh")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_d63f7")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+self_modulate = Color(0.805404, 0.220849, 0.130657, 1)
+region_rect = Rect2(195, 29, 27, 35)
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

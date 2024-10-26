@@ -5,7 +5,7 @@ extends RigidBody2D
 @export var down_spawn_offset : float
 @export var speed : float = 100
 @export var stand_up_force : float = 100
-@export var prop_timer: float = 3
+@export var prop_timer: float = .5
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 			jump()
 		elif prop_time <= 0:
 			prop_time = prop_timer
-			item_spawner.spawn_prop()
+			item_spawner.spawn_prop(transform.basis_xform(Vector2.UP) * 1000.)
 			jump()
 	
 	update_horizontal_velocity()
