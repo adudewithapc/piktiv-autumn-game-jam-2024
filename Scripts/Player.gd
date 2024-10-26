@@ -2,6 +2,8 @@ extends RigidBody2D
 
 @export var jump_height : float = 1
 @export var down_spawn_offset : float
+@export var speed : float = 100
+@export var stand_up_force : float = 100
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
@@ -18,10 +20,11 @@ func _process(delta: float) -> void:
 	update_horizontal_velocity()
 
 func _physics_process(delta: float) -> void:
-	move_and_collide(Vector2.RIGHT * horizontal_velocity * 100 * delta)
+	move_and_collide(Vector2.RIGHT * horizontal_velocity * speed * delta)
+	stand_up(delta)
 	pass
 
-func jump():	
+func jump():
 	apply_impulse(-transform.y * jump_height)
 
 func is_on_ground() -> bool:
@@ -29,3 +32,9 @@ func is_on_ground() -> bool:
 	
 func update_horizontal_velocity():
 	horizontal_velocity = Input.get_axis("first_move_left", "first_move_right")
+
+func stand_up(delta: float):
+	if abs(rotation) > 0.5:
+		angular_velocity = -rotation * delta * stand_up_force
+	else:
+		pass
