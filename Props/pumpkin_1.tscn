@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bha4k6r5f1l81"]
+
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_xxfyt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_weto0"]
+radius = 18.0
+
+[node name="Pumpkin1" instance=ExtResource("1_xxfyt")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_weto0")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+region_rect = Rect2(577, 97, 30, 31)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbyx8bj5rmr6e"]
+
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_ro552"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d63f7"]
+size = Vector2(28, 35)
+
+[node name="Barrel1" instance=ExtResource("1_ro552")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_d63f7")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+region_rect = Rect2(195, 29, 27, 35)
