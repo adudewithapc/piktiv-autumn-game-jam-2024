@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp6sto1pf3744"]
 
-[ext_resource type="PackedScene" uid="uid://daoa5ikxr5k8b" path="res://Props/PropSpawner.tscn" id="1_hiajw"]
+[ext_resource type="PackedScene" path="res://Props/PropSpawner.tscn" id="1_hiajw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -8,7 +8,7 @@ size = Vector2(64, 1080)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byneu"]
 size = Vector2(1088, 64)
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
