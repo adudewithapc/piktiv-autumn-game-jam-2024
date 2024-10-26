@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqjr21ifu8fle"]
+
+[ext_resource type="Texture2D" uid="uid://bk7u7jebxcug7" path="res://Art/VillageProps/Props.tres" id="1_54smu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdv4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnmb7"]
+size = Vector2(32, 28)
+
+[node name="Block" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vdv4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mnmb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("1_54smu")
+region_enabled = true
+region_rect = Rect2(30, 515, 35, 29)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://vu6nx5dx518k"]
+
+[ext_resource type="Texture2D" uid="uid://bk7u7jebxcug7" path="res://Art/VillageProps/Props.tres" id="1_54smu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdv4i"]
+
+[node name="Tree" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vdv4i")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, 35, 57, 3, 61, -35, 36, -58, 17, -58, -6, -71, -28, -57, -47, -49, -55, -22, -61, -10, -52, 15, -6, 34, -5, 68, 4, 68)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionPolygon2D"]
+texture_filter = 1
+texture = ExtResource("1_54smu")
+region_enabled = true
+region_rect = Rect2(693, 471, 120, 138)

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://daoa5ikxr5k8b"]
+[gd_scene load_steps=6 format=3 uid="uid://daoa5ikxr5k8b"]
 
 [ext_resource type="Script" path="res://Props/PropSpawner.gd" id="1_dl1wr"]
-[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/Block.tscn" id="2_n5vst"]
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/Block1.tscn" id="2_n5vst"]
+[ext_resource type="PackedScene" uid="uid://bjbu5iodbknmp" path="res://Props/Block2.tscn" id="3_4iwx3"]
+[ext_resource type="PackedScene" uid="uid://cqjr21ifu8fle" path="res://Props/Chest1.tscn" id="4_fuggh"]
+[ext_resource type="PackedScene" uid="uid://vu6nx5dx518k" path="res://Props/Tree1.tscn" id="5_jabwh"]
 
 [node name="SpawnPosition" type="Marker2D"]
 script = ExtResource("1_dl1wr")
-propCollection = [ExtResource("2_n5vst")]
+propCollection = [ExtResource("2_n5vst"), ExtResource("3_4iwx3"), ExtResource("4_fuggh"), ExtResource("5_jabwh")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
