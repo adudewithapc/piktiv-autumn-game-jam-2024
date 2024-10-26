@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=3 uid="uid://c1maeouc10unn"]
+[gd_resource type="Resource" load_steps=11 format=3 uid="uid://c1maeouc10unn"]
 
 [ext_resource type="Script" path="res://SFX/SFXGlobalLib.gd" id="1_c0g31"]
 [ext_resource type="AudioStream" uid="uid://csovgd35okf4h" path="res://SFX/Retro Birds 07.wav" id="1_pm3dm"]
@@ -7,7 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://cjnhn75r04hwy" path="res://SFX/Retro Impact Metal 05.wav" id="4_gtmam"]
 [ext_resource type="AudioStream" uid="uid://cqcrik0anr418" path="res://SFX/Retro Impact Punch Hurt 01.wav" id="5_ha0f5"]
 [ext_resource type="AudioStream" uid="uid://bieblj3usbg52" path="res://SFX/Retro Water Drop 01.wav" id="6_fxpk6"]
+[ext_resource type="AudioStream" uid="uid://dalqkku2hvcb0" path="res://SFX/tom2.mp3" id="7_6m0xs"]
+[ext_resource type="AudioStream" uid="uid://c4m8gpsgfsafj" path="res://SFX/tom3.mp3" id="8_vf6g6"]
+[ext_resource type="AudioStream" uid="uid://diw0u507fqgbs" path="res://SFX/Wilhelm Scream - Sound Effect (HD).mp3" id="9_tceun"]
 
 [resource]
 script = ExtResource("1_c0g31")
-library = [ExtResource("1_pm3dm"), ExtResource("2_yhdbm"), ExtResource("3_2rmlu"), ExtResource("4_gtmam"), ExtResource("5_ha0f5"), ExtResource("6_fxpk6")]
+library = [ExtResource("1_pm3dm"), ExtResource("2_yhdbm"), ExtResource("3_2rmlu"), ExtResource("4_gtmam"), ExtResource("5_ha0f5"), ExtResource("6_fxpk6"), ExtResource("7_6m0xs"), ExtResource("8_vf6g6"), ExtResource("9_tceun")]

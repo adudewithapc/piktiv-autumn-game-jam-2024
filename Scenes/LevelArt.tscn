@@ -94,7 +94,7 @@ script = ExtResource("5_wfvrh")
 script = ExtResource("6_ssp0v")
 stage = NodePath("../Stage")
 
-[node name="Label" type="Label" parent="." node_paths=PackedStringArray("timer")]
+[node name="RotationLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]
 texture_filter = 1
 offset_left = 800.0
 offset_top = -480.0
