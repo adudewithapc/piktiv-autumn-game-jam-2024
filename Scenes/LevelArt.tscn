@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cyd5qhl2dq8l1"]
+[gd_scene load_steps=10 format=4 uid="uid://cyd5qhl2dq8l1"]
 
 [ext_resource type="Script" path="res://Scripts/MainLevel.gd" id="1_kb54q"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="1_ocwr7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6yfd8r1lchfw" path="res://Scenes/Player.tscn" id="3_csi8t"]
 [ext_resource type="Script" path="res://Scripts/RndTimer.gd" id="5_wfvrh"]
 [ext_resource type="Script" path="res://Scripts/ScreenShake.gd" id="6_ssp0v"]
+[ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="7_br7qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -83,7 +84,7 @@ jump_height = 1.0
 down_spawn_offset = 0.0
 speed = 100.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="ScreenRotate" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 script = ExtResource("5_wfvrh")
@@ -92,6 +93,17 @@ script = ExtResource("5_wfvrh")
 script = ExtResource("6_ssp0v")
 stage = NodePath("../Stage")
 
-[connection signal="timeout" from="Timer" to="Stage" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
-[connection signal="timeout" from="Timer" to="ScreenShake" method="_on_timer_timeout"]
+[node name="Label" type="Label" parent="." node_paths=PackedStringArray("timer")]
+texture_filter = 1
+offset_left = 800.0
+offset_top = -480.0
+offset_right = 840.0
+offset_bottom = -435.0
+theme_override_font_sizes/font_size = 32
+text = "5"
+script = ExtResource("7_br7qt")
+timer = NodePath("../ScreenRotate")
+
+[connection signal="timeout" from="ScreenRotate" to="Stage" method="_on_timer_timeout"]
+[connection signal="timeout" from="ScreenRotate" to="ScreenRotate" method="_on_timeout"]
+[connection signal="timeout" from="ScreenRotate" to="ScreenShake" method="_on_timer_timeout"]
