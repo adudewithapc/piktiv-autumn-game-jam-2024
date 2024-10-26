@@ -48,5 +48,5 @@ func stand_up(delta: float):
 func is_moving() -> bool:
 	return abs(horizontal_velocity) + linear_velocity.length() > 0.1
 
-func _on_stand_still_timer_timeout() -> void:
+func _on_surrounded() -> void:
 	queue_free()
