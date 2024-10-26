@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://daoa5ikxr5k8b"]
+[gd_scene load_steps=7 format=3 uid="uid://daoa5ikxr5k8b"]
 
 [ext_resource type="Script" path="res://Props/PropSpawner.gd" id="1_dl1wr"]
-[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="2_n5vst"]
 [ext_resource type="PackedScene" uid="uid://dnp272tyhjipt" path="res://Props/block_2.tscn" id="3_sbn5i"]
 [ext_resource type="PackedScene" uid="uid://bbyx8bj5rmr6e" path="res://Props/barrel_1.tscn" id="4_2lys0"]
 [ext_resource type="PackedScene" uid="uid://bha4k6r5f1l81" path="res://Props/pumpkin_1.tscn" id="5_p2nqt"]
@@ -10,8 +9,4 @@
 
 [node name="SpawnPosition" type="Marker2D"]
 script = ExtResource("1_dl1wr")
-propCollection = [ExtResource("2_n5vst"), ExtResource("3_sbn5i"), ExtResource("4_2lys0"), ExtResource("5_p2nqt"), ExtResource("6_epv6p"), ExtResource("7_gqcjh")]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
+propCollection = [ExtResource("3_sbn5i"), ExtResource("4_2lys0"), ExtResource("5_p2nqt"), ExtResource("6_epv6p"), ExtResource("7_gqcjh")]

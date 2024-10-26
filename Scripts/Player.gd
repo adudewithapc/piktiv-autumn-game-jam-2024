@@ -2,9 +2,9 @@ extends RigidBody2D
 
 @export var jump_height : float = 1
 @export var down_spawn_offset : float
-@export var item : PackedScene
 
 @onready var ground_raycast := $GroundRaycast
+@onready var item_spawner := $SpawnPosition
 
 var horizontal_velocity := 0.0
 
@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		if is_on_ground():
 			jump()
 		else:
-			spawn_item()
+			item_spawner.spawn_prop()
 	
 	update_horizontal_velocity()
 
@@ -23,12 +23,6 @@ func _physics_process(delta: float) -> void:
 
 func jump():	
 	apply_impulse(Vector2.UP * jump_height)
-
-func spawn_item():
-	var new_item := item.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-	new_item.global_position = global_position + transform.y * down_spawn_offset
-	new_item.rotation = rotation
-	get_tree().root.add_child(new_item)
 
 func is_on_ground() -> bool:
 	return ground_raycast.is_colliding()
