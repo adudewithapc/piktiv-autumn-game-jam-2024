@@ -6,6 +6,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("Collided with " + body.name)
 	if body.name in deletableProps:
 		body.queue_free()
