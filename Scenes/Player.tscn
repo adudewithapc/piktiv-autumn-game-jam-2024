@@ -35,3 +35,8 @@ target_position = Vector2(0, 78)
 
 [node name="SpawnPosition" parent="." instance=ExtResource("4_r0ap4")]
 position = Vector2(0, 66)
+
+[node name="StandStillTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="StandStillTimer" to="." method="_on_stand_still_timer_timeout"]

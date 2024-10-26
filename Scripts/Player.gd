@@ -8,6 +8,7 @@ extends RigidBody2D
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
+@onready var stand_still_timer := $StandStillTimer
 
 var horizontal_velocity := 0.0
 
@@ -20,6 +21,11 @@ func _process(delta: float) -> void:
 			jump()
 	
 	update_horizontal_velocity()
+	
+	if is_moving() and not stand_still_timer.is_stopped():
+		stand_still_timer.stop()
+	elif stand_still_timer.is_stopped():
+		stand_still_timer.start()
 
 func _physics_process(delta: float) -> void:
 	move_and_collide(Vector2.RIGHT * horizontal_velocity * speed * delta)
@@ -41,4 +47,11 @@ func stand_up(delta: float):
 	if abs(rotation) > 0.5:
 		angular_velocity = -rotation * delta * stand_up_force
 	else:
-		pass
+		angular_velocity = 0
+		rotation = 0
+
+func is_moving() -> bool:
+	return abs(horizontal_velocity) + linear_velocity.length() > 0.1
+
+func _on_stand_still_timer_timeout() -> void:
+	queue_free()
