@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6yfd8r1lchfw"]
+[gd_scene load_steps=6 format=3 uid="uid://c6yfd8r1lchfw"]
 
 [ext_resource type="Texture2D" uid="uid://cdhi1x84a0e68" path="res://icon.svg" id="1_5nmld"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fyyni"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sohp8"]
 size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogwdw"]
 
 [node name="Player" type="RigidBody2D"]
 can_sleep = false
@@ -20,7 +22,8 @@ shape = SubResource("RectangleShape2D_sohp8")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_5nmld")
 
-[node name="GroundRaycast" type="RayCast2D" parent="."]
+[node name="GroundRaycast" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_ogwdw")
 target_position = Vector2(0, 78)
 
 [node name="SpawnPosition" parent="." instance=ExtResource("4_r0ap4")]
