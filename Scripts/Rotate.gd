@@ -17,5 +17,5 @@ func _on_timer_timeout() -> void:
 	isRotating = !isRotating
 	rotationDegrees = 0
 	if isRotating:
-		rotatingRight = !rotatingRight
+		rotatingRight = rotatingRight if randf() > .5 else !rotatingRight
 		
