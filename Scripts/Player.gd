@@ -5,18 +5,24 @@ extends RigidBody2D
 @export var down_spawn_offset : float
 @export var speed : float = 100
 @export var stand_up_force : float = 100
+@export var prop_timer: float = 3
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
 @onready var timer := $Timer
 
 var horizontal_velocity := 0.0
+var prop_time := 0.0
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	prop_time = max(0, prop_time - delta)
+
 	if Input.is_action_just_pressed(input_prefix + "_jump"):
 		if is_on_ground():
+			prop_time = 0
 			jump()
-		else:
+		elif prop_time <= 0:
+			prop_time = prop_timer
 			item_spawner.spawn_prop()
 			jump()
 	
