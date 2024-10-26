@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	time += delta * 2 * PI * trip_frequency
 	target_position = Vector2(cos(time), sin(time)) * ray_length
 	
-	print(cos(time))
+	#print(cos(time))
 	if cos(time) >= 0.95 and cos(time - delta) < 0.95 and time > 0:
 		surrounded.emit()
 	
