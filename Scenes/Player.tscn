@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6yfd8r1lchfw"]
 
 [ext_resource type="Texture2D" uid="uid://cdhi1x84a0e68" path="res://icon.svg" id="1_5nmld"]
-[ext_resource type="Script" path="res://Scripts/PlayerMove.gd" id="1_17dx8"]
-[ext_resource type="Script" path="res://Scripts/PlayerJump.gd" id="1_fyyni"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fyyni"]
+[ext_resource type="PackedScene" uid="uid://bpl2w4qovgfdf" path="res://Scenes/Personal/PurpleSquare.tscn" id="2_s7wcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sohp8"]
 size = Vector2(128, 128)
@@ -12,14 +12,14 @@ can_sleep = false
 freeze_mode = 1
 script = ExtResource("1_fyyni")
 jump_height = 500.0
+down_spawn_offset = 65.0
+item = ExtResource("2_s7wcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sohp8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_5nmld")
-script = ExtResource("1_17dx8")
-speed = 100.0
 
 [node name="GroundRaycast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 65)
