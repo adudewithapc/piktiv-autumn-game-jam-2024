@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://jniiomlp1d41"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://jniiomlp1d41"]
 
 [ext_resource type="Texture2D" uid="uid://c0ra36skg8a52" path="res://Art/VillageProps/TX Tileset Ground.png" id="1_ebwsh"]
 [ext_resource type="Texture2D" uid="uid://duepcvn8fppes" path="res://Art/PixelAdventure/Background/Gray.png" id="2_0ndil"]
+[ext_resource type="Texture2D" uid="uid://dghvc0yb0mjk2" path="res://Art/backgrounds.png" id="3_x43mf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1kho"]
 resource_name = "VillageGround"
@@ -181,8 +182,17 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsi3y"]
+texture = ExtResource("3_x43mf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 uv_clipping = true
 sources/0 = SubResource("TileSetAtlasSource_k1kho")
 sources/1 = SubResource("TileSetAtlasSource_lafk3")
+sources/2 = SubResource("TileSetAtlasSource_nsi3y")
