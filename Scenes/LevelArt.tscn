@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cyd5qhl2dq8l1"]
+[gd_scene load_steps=11 format=4 uid="uid://cyd5qhl2dq8l1"]
 
 [ext_resource type="Script" path="res://Scripts/MainLevel.gd" id="1_kb54q"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="1_ocwr7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/RndTimer.gd" id="5_wfvrh"]
 [ext_resource type="Script" path="res://Scripts/ScreenShake.gd" id="6_ssp0v"]
 [ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="7_br7qt"]
+[ext_resource type="PackedScene" uid="uid://dn0gya8lv2exl" path="res://Scenes/UI/VictoryScreen.tscn" id="7_e5ms5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -103,6 +104,9 @@ theme_override_font_sizes/font_size = 32
 text = "5"
 script = ExtResource("7_br7qt")
 timer = NodePath("../ScreenRotate")
+
+[node name="VictoryScreen" parent="." instance=ExtResource("7_e5ms5")]
+visible = false
 
 [connection signal="timeout" from="ScreenRotate" to="Stage" method="_on_timer_timeout"]
 [connection signal="timeout" from="ScreenRotate" to="ScreenRotate" method="_on_timeout"]
