@@ -8,12 +8,11 @@ extends RigidBody2D
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
-@onready var stand_still_timer := $StandStillTimer
-@onready var timer_text := $VisualTimer
+@onready var timer := $Timer
 
 var horizontal_velocity := 0.0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(input_prefix + "_jump"):
 		if is_on_ground():
 			jump()
@@ -22,7 +21,6 @@ func _process(delta: float) -> void:
 			jump()
 	
 	update_horizontal_velocity()
-	update_timer()
 
 func _physics_process(delta: float) -> void:
 	move_and_collide(Vector2.RIGHT * horizontal_velocity * speed * delta)
@@ -49,19 +47,6 @@ func stand_up(delta: float):
 
 func is_moving() -> bool:
 	return abs(horizontal_velocity) + linear_velocity.length() > 0.1
-
-func update_timer():
-	if is_moving():
-		stand_still_timer.stop()
-		timer_text.text = str(stand_still_timer.wait_time).pad_decimals(2)
-	elif stand_still_timer.is_stopped():
-		stand_still_timer.start()
-	
-	if not stand_still_timer.is_stopped():
-		update_timer_text()
-
-func update_timer_text():
-	timer_text.text = str(stand_still_timer.time_left).pad_decimals(2)
 
 func _on_stand_still_timer_timeout() -> void:
 	queue_free()
