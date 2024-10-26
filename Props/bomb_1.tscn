@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pf180e6dqjj"]
+
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_bg4ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d63f7"]
+size = Vector2(28, 35)
+
+[node name="Barrel1" instance=ExtResource("1_bg4ke")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_d63f7")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+self_modulate = Color(0.805404, 0.220849, 0.130657, 1)
+region_rect = Rect2(195, 29, 27, 35)
