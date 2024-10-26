@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 	print(cos(time))
 	if cos(time) >= 0.95 and cos(time - delta) < 0.95 and time > 0:
 		surrounded.emit()
-		print("surrounded!")
 	
 	if not is_colliding() and not has_missed_this_trip:
 		time = 0
