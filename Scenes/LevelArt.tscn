@@ -76,8 +76,11 @@ position = Vector2(-231, 270)
 input_prefix = "first"
 
 [node name="PlayerTwo" parent="." instance=ExtResource("3_csi8t")]
+modulate = Color(4.23551e-06, 0.936242, 0.948368, 1)
 position = Vector2(41, 246)
-input_prefix = "second"
+script = ExtResource("2_6jfnu")
+rotationIncrease = 0.02
+maxRotationDegrees = 5
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
