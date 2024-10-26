@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@export var input_prefix : String
 @export var jump_height : float = 1
 @export var down_spawn_offset : float
 @export var speed : float = 100
@@ -11,7 +12,7 @@ extends RigidBody2D
 var horizontal_velocity := 0.0
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed(input_prefix + "_jump"):
 		if is_on_ground():
 			jump()
 		else:
@@ -34,7 +35,7 @@ func is_on_ground() -> bool:
 	return ground_raycast.is_colliding()
 	
 func update_horizontal_velocity():
-	horizontal_velocity = Input.get_axis("first_move_left", "first_move_right")
+	horizontal_velocity = Input.get_axis(input_prefix + "_move_left", input_prefix + "_move_right")
 
 func stand_up(delta: float):
 	if abs(rotation) > 0.5:
