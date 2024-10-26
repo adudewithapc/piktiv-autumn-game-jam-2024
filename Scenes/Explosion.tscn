@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn5c3bkex3gxs"]
+[gd_scene load_steps=15 format=3 uid="uid://cn5c3bkex3gxs"]
 
+[ext_resource type="Script" path="res://Scenes/explosion.gd" id="1_33vy7"]
 [ext_resource type="Texture2D" uid="uid://d018e6o8lee37" path="res://Art/Explosions/848.png" id="1_nc5c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_011ax"]
@@ -82,14 +83,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g0pjd")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 24.0
 }]
 
 [node name="Explosion" type="Node2D"]
+script = ExtResource("1_33vy7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -1)
+position = Vector2(1, 8)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6h6ei")
+autoplay = "default"
 frame_progress = 0.639092
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -17,9 +17,14 @@ shape = SubResource("RectangleShape2D_d63f7")
 self_modulate = Color(0.805404, 0.220849, 0.130657, 1)
 region_rect = Rect2(195, 29, 27, 35)
 
-[node name="Timer" type="Timer" parent="." index="2"]
+[node name="ExplodeTimer" type="Timer" parent="." index="2"]
 wait_time = 5.0
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="RemoveTimer" type="Timer" parent="." index="3"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="ExplodeTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RemoveTimer" to="." method="_on_remove_timer_timeout"]
