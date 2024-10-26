@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 			jump()
 		elif prop_time <= 0:
 			prop_time = prop_timer
-			item_spawner.spawn_prop(transform.basis_xform(Vector2.UP) * 1000.)
+			item_spawner.spawn_prop(transform.basis_xform(Vector2.DOWN) * 1000.)
 			jump()
 	
 	update_horizontal_velocity()
