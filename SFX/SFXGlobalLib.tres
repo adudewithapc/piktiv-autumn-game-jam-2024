@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://c1maeouc10unn"]
+
+[ext_resource type="Script" path="res://SFX/SFXGlobalLib.gd" id="1_c0g31"]
+[ext_resource type="AudioStream" uid="uid://csovgd35okf4h" path="res://SFX/Retro Birds 07.wav" id="1_pm3dm"]
+[ext_resource type="AudioStream" uid="uid://dmq3uix3qafv2" path="res://SFX/Retro Descending Short 20.wav" id="2_yhdbm"]
+[ext_resource type="AudioStream" uid="uid://bqlrlbuqx52x" path="res://SFX/Retro Impact 20.wav" id="3_2rmlu"]
+[ext_resource type="AudioStream" uid="uid://cjnhn75r04hwy" path="res://SFX/Retro Impact Metal 05.wav" id="4_gtmam"]
+[ext_resource type="AudioStream" uid="uid://cqcrik0anr418" path="res://SFX/Retro Impact Punch Hurt 01.wav" id="5_ha0f5"]
+[ext_resource type="AudioStream" uid="uid://bieblj3usbg52" path="res://SFX/Retro Water Drop 01.wav" id="6_fxpk6"]
+
+[resource]
+script = ExtResource("1_c0g31")
+library = [ExtResource("1_pm3dm"), ExtResource("2_yhdbm"), ExtResource("3_2rmlu"), ExtResource("4_gtmam"), ExtResource("5_ha0f5"), ExtResource("6_fxpk6")]
