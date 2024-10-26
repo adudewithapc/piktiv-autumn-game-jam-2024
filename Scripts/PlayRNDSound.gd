@@ -19,4 +19,4 @@ func _ready():
 func play_rnd():
 	stream = collection.pick_random()
 	pitch_scale = randf_range(pitch_min, pitch_max)
-	play()
+	play(stream.get_length() * randf_range(0., .5))
