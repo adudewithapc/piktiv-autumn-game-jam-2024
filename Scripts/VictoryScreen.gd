@@ -15,3 +15,10 @@ func _ready() -> void:
 func _on_player_won(winner: int, loser: int):
 	victory_text.text = "Player %s won over player %s!" % [winner, loser]
 	visible = true
+
+
+func _on_play_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

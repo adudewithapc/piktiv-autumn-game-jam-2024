@@ -44,11 +44,11 @@ func update_horizontal_velocity():
 	horizontal_velocity = Input.get_axis(input_prefix + "_move_left", input_prefix + "_move_right")
 
 func stand_up(delta: float):
-	if abs(rotation) > 1:
+	if abs(rotation) > 0.5:
 		angular_velocity = -rotation * delta * stand_up_force
-	else:
-		angular_velocity = 0
-		rotation = 0
+	#else:
+		#angular_velocity = 0
+		#rotation = 0
 
 func is_moving() -> bool:
 	return abs(horizontal_velocity) + linear_velocity.length() > 0.1
