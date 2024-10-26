@@ -5,11 +5,18 @@ extends Node
 @export var decay := 0.8
 @export var max_offset = Vector2(32, 16)
 
+@onready var audio: AudioStreamPlayer2D = $AudioPlayer
+@export var clip = []
+
 var trauma_pwr := 3
 var trauma := 0.0
+var isRotating := false
 
 func _on_timer_timeout() -> void:
 	trauma = min(trauma + add_trauma, 1.0)
+	isRotating = !isRotating
+	audio.stream = clip[0] if isRotating else clip[1]
+	audio.play()
 
 func _process(delta: float):
 	if trauma:
@@ -18,6 +25,7 @@ func _process(delta: float):
 	elif stage.position.x != 0 or stage.position.y != 0 or stage.rotation != 0:
 		lerp(stage.position.x, 0.0, 1)
 		lerp(stage.position.y, 0.0, 1)
+
 
 func _shake():
 	var amt = pow(trauma, trauma_pwr)

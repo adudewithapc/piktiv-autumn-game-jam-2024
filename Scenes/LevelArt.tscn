@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cyd5qhl2dq8l1"]
+[gd_scene load_steps=13 format=4 uid="uid://cyd5qhl2dq8l1"]
 
 [ext_resource type="Script" path="res://Scripts/MainLevel.gd" id="1_kb54q"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="1_ocwr7"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/ScreenShake.gd" id="6_ssp0v"]
 [ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="7_br7qt"]
 [ext_resource type="PackedScene" uid="uid://dn0gya8lv2exl" path="res://Scenes/UI/VictoryScreen.tscn" id="7_e5ms5"]
+[ext_resource type="AudioStream" uid="uid://c1pe8o8jj6tu0" path="res://SFX/Retro Interferences Long 08.wav" id="7_nl03v"]
+[ext_resource type="AudioStream" uid="uid://bqlrlbuqx52x" path="res://SFX/Retro Impact 20.wav" id="8_055tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -90,6 +92,9 @@ script = ExtResource("5_wfvrh")
 [node name="ScreenShake" type="Node" parent="." node_paths=PackedStringArray("stage")]
 script = ExtResource("6_ssp0v")
 stage = NodePath("../Stage")
+clip = [ExtResource("7_nl03v"), ExtResource("8_055tx")]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="ScreenShake"]
 
 [node name="RotationLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]
 texture_filter = 1
