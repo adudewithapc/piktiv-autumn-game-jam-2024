@@ -9,7 +9,6 @@ extends RigidBody2D
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $SpawnPosition
-@onready var timer := $Timer
 
 var horizontal_velocity := 0.0
 var prop_time := 0.0
