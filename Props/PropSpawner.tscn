@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dnp272tyhjipt" path="res://Props/block_2.tscn" id="3_sbn5i"]
 [ext_resource type="PackedScene" uid="uid://bbyx8bj5rmr6e" path="res://Props/barrel_1.tscn" id="4_2lys0"]
 [ext_resource type="PackedScene" uid="uid://bha4k6r5f1l81" path="res://Props/pumpkin_1.tscn" id="5_p2nqt"]
-[ext_resource type="PackedScene" uid="uid://c3k2ex2tetppe" path="res://Props/tree_1.tscn" id="6_epv6p"]
+[ext_resource type="PackedScene" uid="uid://c3k2ex2tetppe" path="res://Props/tree/tree_1.tscn" id="6_epv6p"]
 [ext_resource type="PackedScene" uid="uid://cnxvoheptqyib" path="res://Props/vase_1.tscn" id="7_gqcjh"]
 
 [node name="SpawnPosition" type="Marker2D"]

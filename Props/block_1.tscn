@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://maxy7veb1cqc"]
+[gd_scene load_steps=6 format=3 uid="uid://maxy7veb1cqc"]
 
 [ext_resource type="Texture2D" uid="uid://bk7u7jebxcug7" path="res://Art/VillageProps/Props.tres" id="1_dmfx1"]
+[ext_resource type="Script" path="res://Scripts/PlayRNDSound.gd" id="2_40u0u"]
+[ext_resource type="Resource" uid="uid://c1maeouc10unn" path="res://SFX/SFXGlobalLib.tres" id="3_nkj5s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vdv4i"]
 
@@ -18,3 +20,7 @@ texture_filter = 1
 texture = ExtResource("1_dmfx1")
 region_enabled = true
 region_rect = Rect2(42, 19, 45, 45)
+
+[node name="PlayRNDSound" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("2_40u0u")
+global_lib = ExtResource("3_nkj5s")
