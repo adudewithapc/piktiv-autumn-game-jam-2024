@@ -26,7 +26,9 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func jump():
-	apply_impulse(-transform.y * jump_height + get_gravity())
+	linear_velocity.y = 0
+	var jump_impulse := -transform.y * jump_height
+	apply_impulse(jump_impulse)
 
 func is_on_ground() -> bool:
 	return ground_raycast.is_colliding()
