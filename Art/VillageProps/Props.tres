@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bk7u7jebxcug7"]
+
+[ext_resource type="Texture2D" uid="uid://wqmfmdo530ck" path="res://Art/VillageProps/TX Village Props.png" id="1_bs0lw"]
+
+[resource]
+atlas = ExtResource("1_bs0lw")
+region = Rect2(42, 19, 45, 45)
