@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cyd5qhl2dq8l1"]
+[gd_scene load_steps=9 format=4 uid="uid://cyd5qhl2dq8l1"]
 
 [ext_resource type="Script" path="res://Scripts/MainLevel.gd" id="1_kb54q"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="1_ocwr7"]
 [ext_resource type="Script" path="res://Scenes/Rotate.gd" id="2_6jfnu"]
 [ext_resource type="PackedScene" uid="uid://c6yfd8r1lchfw" path="res://Scenes/Player.tscn" id="3_csi8t"]
 [ext_resource type="Script" path="res://Scripts/RndTimer.gd" id="5_wfvrh"]
+[ext_resource type="Script" path="res://Scripts/ScreenShake.gd" id="6_ssp0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
 size = Vector2(64, 1080)
@@ -83,5 +84,10 @@ wait_time = 5.0
 autostart = true
 script = ExtResource("5_wfvrh")
 
+[node name="ScreenShake" type="Node" parent="." node_paths=PackedStringArray("stage")]
+script = ExtResource("6_ssp0v")
+stage = NodePath("../Stage")
+
 [connection signal="timeout" from="Timer" to="Stage" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="Timer" to="ScreenShake" method="_on_timer_timeout"]
