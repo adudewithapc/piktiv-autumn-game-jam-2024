@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=4 uid="uid://cyd5qhl2dq8l1"]
+[gd_scene load_steps=5 format=4 uid="uid://cyd5qhl2dq8l1"]
 
+[ext_resource type="Script" path="res://Scenes/main_level.gd" id="1_kb54q"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="1_ocwr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tx28"]
@@ -9,6 +10,7 @@ size = Vector2(64, 1080)
 size = Vector2(1088, 64)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_kb54q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
