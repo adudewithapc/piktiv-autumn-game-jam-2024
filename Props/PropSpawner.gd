@@ -3,8 +3,9 @@ extends Marker2D
 
 @export var propCollection = []
 
-func spawn_prop():
-	var prop = propCollection.pick_random().instantiate()
+func spawn_prop(impusle = Vector2.ZERO):
+	var prop: RigidBody2D = propCollection.pick_random().instantiate()
 	prop.global_position = global_position
 	prop.rotation = rotation
 	get_tree().root.add_child(prop)
+	prop.apply_impulse(impusle)
