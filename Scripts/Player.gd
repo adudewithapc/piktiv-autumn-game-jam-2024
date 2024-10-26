@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 func jump():
 	linear_velocity.y = 0
-	var jump_impulse := -transform.y * jump_height
+	var jump_impulse := Vector2.UP * jump_height
 	apply_impulse(jump_impulse)
 
 func is_on_ground() -> bool:
