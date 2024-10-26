@@ -18,7 +18,7 @@ freeze_mode = 1
 script = ExtResource("1_fyyni")
 jump_height = 500.0
 down_spawn_offset = 65.0
-speed = 500.0
+speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
