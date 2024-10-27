@@ -1,20 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdg5ibh43a2wl"]
+[gd_scene load_steps=4 format=3 uid="uid://bdg5ibh43a2wl"]
 
+[ext_resource type="Texture2D" uid="uid://dq7mbtmtbn3rx" path="res://Scenes/UI/banner1.tres" id="1_ogmla"]
 [ext_resource type="Texture2D" uid="uid://lpvrp468rxjr" path="res://Art/arrow.png" id="1_r4ara"]
-
-[sub_resource type="Gradient" id="Gradient_tkgbq"]
-offsets = PackedFloat32Array(0, 0.0194805)
-colors = PackedColorArray(0.733333, 0.733333, 0.733333, 1, 0.733333, 0.733333, 0.733333, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4rcc3"]
-gradient = SubResource("Gradient_tkgbq")
-width = 600
-height = 800
-fill_to = Vector2(0, 0.00917431)
-
-[sub_resource type="LabelSettings" id="LabelSettings_dp25u"]
-font_size = 32
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hvl5j"]
 font_size = 32
@@ -22,14 +9,6 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,55 +16,80 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_4rcc3")
 
-[node name="Title" type="Label" parent="TextureRect"]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -55.0
-offset_top = 64.13
-offset_right = 55.0
-offset_bottom = 109.13
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -352.0
+offset_right = -260.0
+offset_bottom = -312.0
 grow_horizontal = 2
-text = "Credits"
-label_settings = SubResource("LabelSettings_dp25u")
+grow_vertical = 2
 
-[node name="BackButton" type="Button" parent="TextureRect"]
+[node name="BackButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -59.0
+offset_top = 38.0
+offset_right = -1.0
+offset_bottom = 96.0
 icon = ExtResource("1_r4ara")
 
-[node name="Content" type="VBoxContainer" parent="TextureRect"]
+[node name="Content" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 32.0
+offset_top = 45.5
+offset_right = 528.0
+offset_bottom = 608.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 45
 
-[node name="Programmers" type="VBoxContainer" parent="TextureRect/Content"]
+[node name="Programmers" type="VBoxContainer" parent="Control/Content"]
 layout_mode = 2
 
-[node name="Sub-title" type="Label" parent="TextureRect/Content/Programmers"]
+[node name="Control" type="Control" parent="Control/Content/Programmers"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Content/Programmers/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -50.5
+offset_right = -39.0
+offset_bottom = -25.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.3063, 3.3063)
+texture = ExtResource("1_ogmla")
+
+[node name="Sub-title" type="Label" parent="Control/Content/Programmers/Control"]
+layout_mode = 2
+offset_right = 496.0
+offset_bottom = 45.0
+size_flags_vertical = 1
 text = "Made by"
 label_settings = SubResource("LabelSettings_hvl5j")
 horizontal_alignment = 1
 
-[node name="Christoffer" type="CenterContainer" parent="TextureRect/Content/Programmers"]
+[node name="Christoffer" type="CenterContainer" parent="Control/Content/Programmers"]
 layout_mode = 2
 
-[node name="LinkButton3" type="LinkButton" parent="TextureRect/Content/Programmers/Christoffer"]
+[node name="LinkButton3" type="LinkButton" parent="Control/Content/Programmers/Christoffer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -94,10 +98,10 @@ theme_override_font_sizes/font_size = 24
 text = "Christoffer Cederfeldt"
 uri = "https://chrizcode.itch.io/"
 
-[node name="Linnea" type="CenterContainer" parent="TextureRect/Content/Programmers"]
+[node name="Linnea" type="CenterContainer" parent="Control/Content/Programmers"]
 layout_mode = 2
 
-[node name="LinkButton3" type="LinkButton" parent="TextureRect/Content/Programmers/Linnea"]
+[node name="LinkButton3" type="LinkButton" parent="Control/Content/Programmers/Linnea"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -106,10 +110,10 @@ theme_override_font_sizes/font_size = 24
 text = "Linnea Almlöf"
 uri = "https://itch.io/profile/nea1303"
 
-[node name="Axel" type="CenterContainer" parent="TextureRect/Content/Programmers"]
+[node name="Axel" type="CenterContainer" parent="Control/Content/Programmers"]
 layout_mode = 2
 
-[node name="LinkButton3" type="LinkButton" parent="TextureRect/Content/Programmers/Axel"]
+[node name="LinkButton3" type="LinkButton" parent="Control/Content/Programmers/Axel"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -118,16 +122,38 @@ theme_override_font_sizes/font_size = 24
 text = "Axel Holm"
 uri = "https://that-martin-guy.itch.io"
 
-[node name="Art" type="VBoxContainer" parent="TextureRect/Content"]
+[node name="Art" type="VBoxContainer" parent="Control/Content"]
 layout_mode = 2
 
-[node name="Sub-title" type="Label" parent="TextureRect/Content/Art"]
+[node name="Control" type="Control" parent="Control/Content/Art"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Content/Art/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.9999
+offset_top = -50.9999
+offset_right = -36.9999
+offset_bottom = -25.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.3063, 3.3063)
+texture = ExtResource("1_ogmla")
+
+[node name="Sub-title" type="Label" parent="Control/Content/Art/Control"]
+layout_mode = 2
+offset_right = 496.0
+offset_bottom = 45.0
 text = "Art"
 label_settings = SubResource("LabelSettings_hvl5j")
 horizontal_alignment = 1
 
-[node name="LinkButton" type="LinkButton" parent="TextureRect/Content/Art"]
+[node name="LinkButton" type="LinkButton" parent="Control/Content/Art"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -136,7 +162,7 @@ theme_override_font_sizes/font_size = 24
 text = "Pixel Art Platformer - Village Props"
 uri = "https://cainos.itch.io/pixel-art-platformer-village-props"
 
-[node name="LinkButton2" type="LinkButton" parent="TextureRect/Content/Art"]
+[node name="LinkButton2" type="LinkButton" parent="Control/Content/Art"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -145,16 +171,38 @@ theme_override_font_sizes/font_size = 24
 text = "Retro Pixel Ribbons, Banners and Frames 2"
 uri = "https://bdragon1727.itch.io/retro-pixel-ribbons-banners-and-frames-2"
 
-[node name="Audio" type="VBoxContainer" parent="TextureRect/Content"]
+[node name="Audio" type="VBoxContainer" parent="Control/Content"]
 layout_mode = 2
 
-[node name="Sub-title" type="Label" parent="TextureRect/Content/Audio"]
+[node name="Control" type="Control" parent="Control/Content/Audio"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Content/Audio/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -46.5
+offset_right = -41.9999
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.3063, 3.3063)
+texture = ExtResource("1_ogmla")
+
+[node name="Sub-title" type="Label" parent="Control/Content/Audio/Control"]
+layout_mode = 2
+offset_right = 496.0
+offset_bottom = 45.0
 text = "Audio"
 label_settings = SubResource("LabelSettings_hvl5j")
 horizontal_alignment = 1
 
-[node name="LinkButton" type="LinkButton" parent="TextureRect/Content/Audio"]
+[node name="LinkButton" type="LinkButton" parent="Control/Content/Audio"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
@@ -162,5 +210,3 @@ theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109
 theme_override_font_sizes/font_size = 24
 text = "200 Free SFX"
 uri = "https://kronbits.itch.io/freesfx"
-
-[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]
