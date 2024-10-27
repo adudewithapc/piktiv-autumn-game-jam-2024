@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx15fp8e06rlf"]
+[gd_scene load_steps=6 format=3 uid="uid://c3k2ex2tetppe"]
 
 [ext_resource type="Texture2D" uid="uid://bk7u7jebxcug7" path="res://Art/VillageProps/Props.tres" id="1_2ekok"]
-[ext_resource type="Script" path="res://Scripts/PlayRNDSound.gd" id="2_j4g5e"]
+[ext_resource type="Script" path="res://SFX/PlayRNDSound.gd" id="2_j4g5e"]
 [ext_resource type="Resource" uid="uid://c1maeouc10unn" path="res://SFX/SFXGlobalLib.tres" id="3_tegub"]
 [ext_resource type="AudioStream" uid="uid://csovgd35okf4h" path="res://SFX/Retro Birds 07.wav" id="4_cwfak"]
 

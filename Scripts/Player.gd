@@ -13,7 +13,7 @@ signal died(death_source: DEATH_SOURCE)
 @export var prop_timer: float = .5
 
 @onready var ground_raycast := $GroundRaycast
-@onready var item_spawner := $SpawnPosition
+@onready var item_spawner := $PropSpawner
 
 var horizontal_velocity := 0.0
 var prop_time := 0.0
