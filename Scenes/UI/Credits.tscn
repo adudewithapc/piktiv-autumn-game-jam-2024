@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdg5ibh43a2wl"]
+[gd_scene load_steps=7 format=3 uid="uid://bdg5ibh43a2wl"]
 
 [ext_resource type="Texture2D" uid="uid://lpvrp468rxjr" path="res://Art/arrow.png" id="1_r4ara"]
 
@@ -13,6 +13,10 @@ height = 800
 fill_to = Vector2(0, 0.00917431)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dp25u"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hvl5j"]
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
@@ -58,7 +62,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 icon = ExtResource("1_r4ara")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="Content" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,23 +75,78 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 100
 
-[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+[node name="Programmers" type="VBoxContainer" parent="TextureRect/Content"]
+layout_mode = 2
+
+[node name="Sub-title" type="Label" parent="TextureRect/Content/Programmers"]
+layout_mode = 2
+text = "Made by"
+label_settings = SubResource("LabelSettings_hvl5j")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect/Content/Programmers"]
 layout_mode = 2
 text = "Christoffer Cederfeldt"
 label_settings = SubResource("LabelSettings_hpxwo")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TextureRect/VBoxContainer"]
+[node name="Label2" type="Label" parent="TextureRect/Content/Programmers"]
 layout_mode = 2
 text = "Linnea Almlöf"
 label_settings = SubResource("LabelSettings_hpxwo")
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="TextureRect/VBoxContainer"]
+[node name="Label3" type="Label" parent="TextureRect/Content/Programmers"]
 layout_mode = 2
 text = "Axel Holm"
 label_settings = SubResource("LabelSettings_hpxwo")
 horizontal_alignment = 1
+
+[node name="Art" type="VBoxContainer" parent="TextureRect/Content"]
+layout_mode = 2
+
+[node name="Sub-title" type="Label" parent="TextureRect/Content/Art"]
+layout_mode = 2
+text = "Art"
+label_settings = SubResource("LabelSettings_hvl5j")
+horizontal_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="TextureRect/Content/Art"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 24
+text = "Pixel Art Platformer - Village Props"
+uri = "https://cainos.itch.io/pixel-art-platformer-village-props"
+
+[node name="LinkButton2" type="LinkButton" parent="TextureRect/Content/Art"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 24
+text = "Retro Pixel Ribbons, Banners and Frames 2"
+uri = "https://bdragon1727.itch.io/retro-pixel-ribbons-banners-and-frames-2"
+
+[node name="Audio" type="VBoxContainer" parent="TextureRect/Content"]
+layout_mode = 2
+
+[node name="Sub-title" type="Label" parent="TextureRect/Content/Audio"]
+layout_mode = 2
+text = "Art"
+label_settings = SubResource("LabelSettings_hvl5j")
+horizontal_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="TextureRect/Content/Audio"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.111197, 0.111197, 0.111197, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.109804, 0.109804, 1)
+theme_override_font_sizes/font_size = 24
+text = "200 Free SFX"
+uri = "https://kronbits.itch.io/freesfx"
 
 [connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]
