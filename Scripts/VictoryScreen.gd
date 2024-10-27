@@ -3,6 +3,9 @@ extends Control
 @onready var victory_text := $Background/VictoryText
 
 func _ready() -> void:
+	if OS.has_feature("web"):
+		$Background/VBoxContainer/QuitButton.queue_free()
+	
 	var player_one : Player = $"../PlayerOne"
 	var player_two : Player = $"../PlayerTwo"
 	
