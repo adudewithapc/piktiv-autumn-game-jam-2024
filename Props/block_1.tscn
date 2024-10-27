@@ -10,6 +10,7 @@
 size = Vector2(42, 42)
 
 [node name="Block1" type="RigidBody2D"]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_vdv4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
