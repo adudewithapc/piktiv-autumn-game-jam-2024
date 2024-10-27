@@ -36,7 +36,7 @@ region_rect = Rect2(703.003, 227.962, 65.8928, 93.4066)
 shape = SubResource("RectangleShape2D_ogwdw")
 target_position = Vector2(0, 78)
 
-[node name="SpawnPosition" parent="." instance=ExtResource("4_r0ap4")]
+[node name="PropSpawner" parent="." instance=ExtResource("4_r0ap4")]
 position = Vector2(0, 66)
 
 [node name="MoveRaycast" type="ShapeCast2D" parent="."]

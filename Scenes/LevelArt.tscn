@@ -109,6 +109,7 @@ timer = NodePath("../ScreenRotate")
 
 [node name="VictoryScreen" parent="." instance=ExtResource("7_e5ms5")]
 visible = false
+z_index = 0
 
 [connection signal="timeout" from="ScreenRotate" to="Stage" method="_on_timer_timeout"]
 [connection signal="timeout" from="ScreenRotate" to="ScreenRotate" method="_on_timeout"]

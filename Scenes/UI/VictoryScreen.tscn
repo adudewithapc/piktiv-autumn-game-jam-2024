@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn0gya8lv2exl"]
+[gd_scene load_steps=8 format=3 uid="uid://dn0gya8lv2exl"]
 
 [ext_resource type="Script" path="res://Scripts/VictoryScreen.gd" id="1_21yok"]
+[ext_resource type="AudioStream" uid="uid://b736dpdkx050t" path="res://SFX/Happy Wheels victory green screen.wav" id="2_fatvh"]
+[ext_resource type="Script" path="res://SFX/PlayOnEnable.gd" id="3_1v58n"]
 
 [sub_resource type="Gradient" id="Gradient_7qfkr"]
 colors = PackedColorArray(0.733005, 0.733005, 0.733005, 1, 0.733333, 0.733333, 0.733333, 1)
@@ -99,5 +101,11 @@ text = "Play Again"
 layout_mode = 2
 text = "Quit"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Background"]
+position = Vector2(-660, -140)
+stream = ExtResource("2_fatvh")
+script = ExtResource("3_1v58n")
+
+[connection signal="visibility_changed" from="." to="Background/AudioStreamPlayer2D" method="_on_victory_screen_visibility_changed"]
 [connection signal="pressed" from="Background/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

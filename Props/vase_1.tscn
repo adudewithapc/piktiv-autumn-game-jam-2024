@@ -6,6 +6,7 @@
 size = Vector2(18, 30)
 
 [node name="Vase1" instance=ExtResource("1_trwxn")]
+collision_layer = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_merfl")
