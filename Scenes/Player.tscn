@@ -46,4 +46,8 @@ target_position = Vector2(0, 49)
 script = ExtResource("4_y3p1d")
 ray_length = 100.0
 
+[node name="StunTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="surrounded" from="MoveRaycast" to="." method="_on_surrounded"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
