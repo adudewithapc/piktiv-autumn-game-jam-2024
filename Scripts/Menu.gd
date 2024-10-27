@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	var quit_button := $VBoxContainer/QuitButton
+	var quit_button := $VBoxContainer/Quit
 	if OS.has_feature("web"):
 		quit_button.queue_free()
 
