@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bha4k6r5f1l81"]
+[gd_scene load_steps=4 format=3 uid="uid://bha4k6r5f1l81"]
 
 [ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_xxfyt"]
+[ext_resource type="Script" path="res://Props/ReactiveExplosion.gd" id="2_ifrfb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_weto0"]
 radius = 18.0
 
 [node name="Pumpkin1" instance=ExtResource("1_xxfyt")]
+script = ExtResource("2_ifrfb")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 16)
