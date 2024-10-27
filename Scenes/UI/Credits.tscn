@@ -136,7 +136,7 @@ layout_mode = 2
 
 [node name="Sub-title" type="Label" parent="TextureRect/Content/Audio"]
 layout_mode = 2
-text = "Art"
+text = "Audio"
 label_settings = SubResource("LabelSettings_hvl5j")
 horizontal_alignment = 1
 
