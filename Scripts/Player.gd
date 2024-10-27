@@ -11,6 +11,7 @@ signal died(death_source: DEATH_SOURCE)
 @export var speed : float = 100
 @export var stand_up_force : float = 100
 @export var prop_timer: float = .5
+@export var stun_modulate : Color = Color.WHITE
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $PropSpawner
@@ -18,10 +19,12 @@ signal died(death_source: DEATH_SOURCE)
 
 var horizontal_velocity := 0.0
 var prop_time := 0.0
+var start_modulate_color : Color
 
 func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 20
+	start_modulate_color = modulate
 
 func _process(delta: float) -> void:
 	prop_time = max(0, prop_time - delta)
@@ -79,6 +82,8 @@ func _on_body_entered(body: Node) -> void:
 	
 	if body.linear_velocity.length() > 1000:
 		stun_timer.start()
+		modulate = stun_modulate
 
 func _on_stun_timer_timeout() -> void:
 	stun_timer.stop()
+	modulate = start_modulate_color
