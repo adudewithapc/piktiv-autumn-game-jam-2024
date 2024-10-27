@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_gty37"]
 [ext_resource type="PackedScene" uid="uid://bdg5ibh43a2wl" path="res://Scenes/UI/Credits.tscn" id="2_gforu"]
 [ext_resource type="Theme" uid="uid://col0mdiiysc8x" path="res://Scenes/UI/buttonTheme.tres" id="3_5e5mu"]
-[ext_resource type="Texture2D" uid="uid://bffkyuyqo83at" path="res://Scenes/UI/buttons.tres" id="4_bim6j"]
+[ext_resource type="Texture2D" path="res://Scenes/UI/buttons.tres" id="4_bim6j"]
 [ext_resource type="TileSet" uid="uid://jniiomlp1d41" path="res://Art/VillageProps/VillageGroundTileSet.tres" id="4_hmu8t"]
 
 [node name="Menu" type="Control" node_paths=PackedStringArray("current")]

@@ -3,7 +3,7 @@ extends Marker2D
 var rotationDegrees = 0
 @export var rotationIncrease = 0.02
 @export var maxRotationDegrees = 5
-@export var particles: Array[GPUParticles2D] = [] 
+@export var particles: Array[CPUParticles2D] = [] 
 var isRotating = false
 var rotatingRight = true
 
