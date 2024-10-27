@@ -14,13 +14,24 @@ signal died(death_source: DEATH_SOURCE)
 
 @onready var ground_raycast := $GroundRaycast
 @onready var item_spawner := $PropSpawner
+@onready var stun_timer := $StunTimer
 
 var horizontal_velocity := 0.0
 var prop_time := 0.0
 
+func _ready() -> void:
+	contact_monitor = true
+	max_contacts_reported = 20
+
 func _process(delta: float) -> void:
 	prop_time = max(0, prop_time - delta)
 
+	if not is_stunned():
+		process_input()
+	else:
+		horizontal_velocity = 0
+
+func process_input():
 	if Input.is_action_just_pressed(input_prefix + "_jump"):
 		if is_on_ground():
 			prop_time = 0
@@ -58,3 +69,16 @@ func is_moving() -> bool:
 func _on_surrounded() -> void:
 	died.emit(DEATH_SOURCE.CRUSH)
 	queue_free()
+
+func is_stunned() -> bool:
+	return not stun_timer.is_stopped()
+
+func _on_body_entered(body: Node) -> void:
+	if not body is RigidBody2D:
+		return
+	
+	if body.linear_velocity.length() > 1000:
+		stun_timer.start()
+
+func _on_stun_timer_timeout() -> void:
+	stun_timer.stop()
