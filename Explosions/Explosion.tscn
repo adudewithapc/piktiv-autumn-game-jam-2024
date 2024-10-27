@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dee84elqspyj8"]
 
-[ext_resource type="Script" path="res://Props/explosion.gd" id="1_33vy7"]
+[ext_resource type="Script" path="res://Explosions/explosion.gd" id="1_33vy7"]
 [ext_resource type="Texture2D" uid="uid://d018e6o8lee37" path="res://Art/Explosions/848.png" id="1_nc5c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_011ax"]
@@ -89,6 +89,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fj4b"]
+radius = 18.0
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource("1_33vy7")
@@ -98,7 +99,6 @@ position = Vector2(1, 32)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_6h6ei")
 autoplay = "default"
-frame_progress = 0.639092
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
