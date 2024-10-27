@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://cdd0ga8cyipl6"]
+
+[ext_resource type="PackedScene" uid="uid://bbyx8bj5rmr6e" path="res://Props/barrel_1.tscn" id="1_43qk6"]
+[ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="2_olqtr"]
+[ext_resource type="PackedScene" uid="uid://dnp272tyhjipt" path="res://Props/block_2.tscn" id="3_vjobf"]
+[ext_resource type="PackedScene" uid="uid://d0pf180e6dqjj" path="res://Props/bomb_1.tscn" id="4_n6bae"]
+[ext_resource type="PackedScene" uid="uid://bha4k6r5f1l81" path="res://Props/pumpkin_1.tscn" id="5_ftmd2"]
+[ext_resource type="PackedScene" uid="uid://c3k2ex2tetppe" path="res://Props/tree_1.tscn" id="6_afejt"]
+[ext_resource type="Script" path="res://Props/GlobalPropsLib.gd" id="7_fcrwn"]
+[ext_resource type="PackedScene" uid="uid://cnxvoheptqyib" path="res://Props/vase_1.tscn" id="7_rayi2"]
+
+[resource]
+script = ExtResource("7_fcrwn")
+library = {
+ExtResource("1_43qk6"): 10,
+ExtResource("2_olqtr"): 10,
+ExtResource("3_vjobf"): 10,
+ExtResource("4_n6bae"): 10,
+ExtResource("5_ftmd2"): 10,
+ExtResource("6_afejt"): 10,
+ExtResource("7_rayi2"): 10
+}

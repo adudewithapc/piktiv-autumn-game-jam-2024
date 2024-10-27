@@ -1,10 +1,10 @@
 class_name PropSpawner
 extends Marker2D
 
-@export var propCollection = []
+@export var global_lib: Resource = null
 
 func spawn_prop(impulse = Vector2.ZERO):
-	var prop: RigidBody2D = propCollection.pick_random().instantiate()
+	var prop: RigidBody2D = global_lib.get_prop().instantiate()
 	prop.global_position = global_position
 	prop.rotation = rotation
 	get_tree().root.get_child(0).add_child(prop)
