@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var explosionScene = preload("res://Scenes/Explosion.tscn")
+var explosionScene = preload("res://Props/Explosion.tscn")
 var audioScene = preload("res://SFX/SoundPlayer.tscn")
 
 func _ready():
