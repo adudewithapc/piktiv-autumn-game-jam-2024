@@ -1,4 +1,9 @@
+class_name Player
 extends RigidBody2D
+
+enum DEATH_SOURCE { CRUSH, EXPLODED }
+
+signal died(death_source: DEATH_SOURCE)
 
 @export var input_prefix : String
 @export var jump_height : float = 1
@@ -46,12 +51,10 @@ func update_horizontal_velocity():
 func stand_up(delta: float):
 	if abs(rotation) > 0.5:
 		angular_velocity = -rotation * delta * stand_up_force
-	#else:
-		#angular_velocity = 0
-		#rotation = 0
 
 func is_moving() -> bool:
 	return abs(horizontal_velocity) + linear_velocity.length() > 0.1
 
 func _on_surrounded() -> void:
+	died.emit(DEATH_SOURCE.CRUSH)
 	queue_free()
