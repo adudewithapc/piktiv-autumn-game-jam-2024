@@ -1,3 +1,4 @@
+class_name GlobalPropsLib
 extends Resource
 
 @export var library: Dictionary = {}
