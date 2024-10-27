@@ -1,15 +1,12 @@
 class_name PropSpawner
 extends Marker2D
 
-@export var propCollection = []
-@export var i = 0
+@export var global_lib: GlobalPropsLib = null
 
 func spawn_prop(impulse = Vector2.ZERO):
-	i += 2
-	var chosenPropType: PackedScene = propCollection.pick_random()
+	var chosenPropType: PackedScene = global_lib.get_prop()
 	var prop = chosenPropType.instantiate()
 	prop.global_position = global_position
 	prop.rotation = rotation
-	prop.name = "prop" + str(i)
 	get_tree().root.get_child(0).add_child(prop)
 	prop.apply_impulse(impulse)
