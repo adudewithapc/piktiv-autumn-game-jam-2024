@@ -11,4 +11,4 @@
 
 [resource]
 script = ExtResource("7_fcrwn")
-library = Array[Array]([[ExtResource("1_km6dd"), 10], [ExtResource("2_emr4f"), 10], [ExtResource("3_tq1nd"), 10], [ExtResource("4_yek34"), 5], [ExtResource("5_puqer"), 10], [ExtResource("6_efdy6"), 10], [ExtResource("7_5mvsx"), 10]])
+library = Array[Array]([[ExtResource("1_km6dd"), 10], [ExtResource("2_emr4f"), 10], [ExtResource("3_tq1nd"), 10], [ExtResource("4_yek34"), 5], [ExtResource("5_puqer"), 10], [ExtResource("6_efdy6"), 5], [ExtResource("7_5mvsx"), 10]])

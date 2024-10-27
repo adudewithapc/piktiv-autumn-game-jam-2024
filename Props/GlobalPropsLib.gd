@@ -15,8 +15,8 @@ func get_prop() -> PackedScene:
 		if rnd < pair[1]:
 			return pair[0]
 		rnd -= pair[1]
-	push_error("COULDN'T GRAB RANDOM PROP")
-	return null
+	push_error("COULDN'T GRAB RANDOM PROP "+str(sum)+":"+str(rnd))
+	return library[0][0]
 
 func sum_array(arr: Array) -> int:
 	var s := 0

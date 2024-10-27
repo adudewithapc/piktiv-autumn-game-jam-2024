@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0pf180e6dqjj"]
+[gd_scene load_steps=5 format=3 uid="uid://d0pf180e6dqjj"]
 
 [ext_resource type="PackedScene" uid="uid://maxy7veb1cqc" path="res://Props/block_1.tscn" id="1_bg4ke"]
 [ext_resource type="Script" path="res://Props/Bomb.gd" id="2_g76vh"]
+[ext_resource type="Script" path="res://Scripts/TimerLabel.gd" id="3_eu3fo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d63f7"]
 size = Vector2(28, 35)
@@ -25,6 +26,21 @@ autostart = true
 [node name="RemoveTimer" type="Timer" parent="." index="3"]
 wait_time = 0.1
 one_shot = true
+
+[node name="TimerLabel" type="Label" parent="." index="4" node_paths=PackedStringArray("timer")]
+texture_filter = 1
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "5"
+horizontal_alignment = 1
+script = ExtResource("3_eu3fo")
+timer = NodePath("../ExplodeTimer")
+decimals = 0
 
 [connection signal="timeout" from="ExplodeTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RemoveTimer" to="." method="_on_remove_timer_timeout"]
