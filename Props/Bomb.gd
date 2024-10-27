@@ -3,6 +3,9 @@ extends RigidBody2D
 var explosionScene = preload("res://Scenes/Explosion.tscn")
 var audioScene = preload("res://SFX/SoundPlayer.tscn")
 
+func _ready():
+	$ExplodeTimer.timeout.connect(func(): Events.shake_screen.emit(10))
+
 func _on_timer_timeout() -> void:
 	var explosion = explosionScene.instantiate()
 	get_parent().add_child(explosion)

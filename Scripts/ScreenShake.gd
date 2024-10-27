@@ -12,11 +12,17 @@ var trauma_pwr := 3
 var trauma := 0.0
 var isRotating := false
 
+func shake(add):
+	trauma = min(trauma + add, 1.0)
+
 func _on_timer_timeout() -> void:
-	trauma = min(trauma + add_trauma, 1.0)
+	shake(add_trauma)
 	isRotating = !isRotating
 	audio.stream = clip[0] if isRotating else clip[1]
 	audio.play()
+
+func _ready():
+	Events.shake_screen.connect(shake)
 
 func _process(delta: float):
 	if trauma:
